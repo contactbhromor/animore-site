@@ -1,6 +1,6 @@
 // ===== Settings =====
 // Your Vercel backend address (no slash at the end), e.g. https://animore-api.vercel.app
-const API_BASE = 'https://animore-api.vercel.app/';
+const API_BASE = 'https://animore-api.vercel.app';
 // =====================
 
 const IMG = Array.from({length:65}, (_, i) => `images/${i}.jpg`);
