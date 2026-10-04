@@ -23,7 +23,7 @@ const CATEGORIES = [
   tags:["Pure gachi tussar","Super soft","Light weight","Blouse piece included"],
   items:[
    ["TJS7001",[5,56],"Midnight navy with a bronze woven border and a richly patterned pallu."]]},
- {name:"Crash Tissue Linen Sarees with Running Blouse Piece",
+ {name:"Crash Tissue Linen Sarees with Running Blouse Piece", price:25,
   about:"Tissue by linen with inch border. Premium quality with a super soft fabric.",
   tags:["Tissue by linen","Inch border","Running blouse"],
   items:[
@@ -32,14 +32,14 @@ const CATEGORIES = [
    ["TL1503",[8,59],"Silver grey crash tissue with a striped, checked pallu."],
    ["TL1504",[9,60],"Peach rose with gold tissue shimmer and a striped pallu."],
    ["TL1505",[10,61],"Dusky mauve with a soft gold glow and woven stripes."]]},
- {name:"Linen Zari Weaving Work Saree with Blouse Piece",
+ {name:"Linen Zari Weaving Work Saree with Blouse Piece", price:40,
   about:"Linen sarees with zari weaving work.",
   tags:["Linen","Zari weaving","Blouse piece included"],
   items:[
    ["NZW2501",[11,62],"Espresso brown checks with a floral zari pallu and gold-striped border."],
    ["NZW2502",[12,63],"Wine maroon with woven florals on the pallu and a gold border."],
    ["NZW2503",[13,64],"Peacock blue checks with large ivory florals and a silver-gold pallu."]]},
- {name:"Gachi Tussar Muga Silk Sarees with Kanjivaram Border",
+ {name:"Gachi Tussar Muga Silk Sarees with Kanjivaram Border", price:35,
   about:"Exclusive new gachi tussar muga silk with kanjivaram design border. Gorgeous tussar colour, premium quality and light weight. Beautiful designer blouse piece available.",
   tags:["Gachi tussar muga silk","Kanjivaram border","Designer blouse"],
   items:[
@@ -118,6 +118,7 @@ const heartSvg = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s
 const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const slug = s => s.replace(/\s+/g,'-');
 // Price = 4th and 3rd digits from the end of the code, e.g. GTJS6501 -> £65
+// Collections with a set price (price: in CATEGORIES) use that instead. Keep api/checkout.js in step.
 const priceOf = code => { const m = code.match(/(\d)(\d)\d\d$/); return m ? +(m[1]+m[2]) : null; };
 const gbp = n => '£' + (Number.isInteger(n) ? n.toLocaleString('en-GB') : n.toLocaleString('en-GB',{minimumFractionDigits:2,maximumFractionDigits:2}));
 $('#brandLogo').src = LOGO;
@@ -133,7 +134,7 @@ CATEGORIES.forEach((c, i) => {
     <div class="cat-head"><span class="cat-num" aria-hidden="true">${n}</span><h2 id="h-${n}">${esc(c.name)}</h2><p>${esc(c.about)}</p></div>
     <div class="weave" aria-hidden="true"></div>`;
   c.items.forEach(([code, imgs, desc]) => {
-    const price = priceOf(code);
+    const price = c.price != null ? c.price : priceOf(code); // collection price overrides the code rule
     byCode[code] = {code, cat:c.name, n, img:imgs[0], price, desc, tags:c.tags, about:c.about, order:Object.keys(byCode).length};
     const id = slug(code);
     html += `<article class="item" data-code="${esc(code)}" id="s-${id}">
