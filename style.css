@@ -257,3 +257,10 @@ footer .weave{margin-bottom:24px}
 .co-err{font-size:.86rem;color:var(--kumkum);margin:10px 0 0}
 .add:disabled{opacity:.55;cursor:not-allowed}
 .add.loading{opacity:.75;cursor:progress}
+
+/* Instagram link in the header: same pill as Saved, a little extra space before the Saved/Search/Basket group */
+.pill.ig{text-decoration:none;color:inherit;margin-right:4px}
+.pill.ig:hover{border-color:var(--kumkum);color:var(--kumkum)}
+@media (max-width:820px){ .pill.ig{margin-right:0} }
+/* Smallest phones: the logo already shows the name, so hide the text to make room for four buttons */
+@media (max-width:379px){ .brand > span{display:none} }
