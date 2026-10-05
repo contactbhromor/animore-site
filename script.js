@@ -23,7 +23,7 @@ const CATEGORIES = [
   tags:["Pure gachi tussar","Super soft","Light weight","Blouse piece included"],
   items:[
    ["TJS7001",[5,56],"Midnight navy with a bronze woven border and a richly patterned pallu."]]},
- {name:"Crash Tissue Linen Sarees with Running Blouse Piece", price:25,
+ {name:"Crash Tissue Linen Sarees with Running Blouse Piece", comingSoon:true,
   about:"Tissue by linen with inch border. Premium quality with a super soft fabric.",
   tags:["Tissue by linen","Inch border","Running blouse"],
   items:[
@@ -32,14 +32,14 @@ const CATEGORIES = [
    ["TL1503",[8,59],"Silver grey crash tissue with a striped, checked pallu."],
    ["TL1504",[9,60],"Peach rose with gold tissue shimmer and a striped pallu."],
    ["TL1505",[10,61],"Dusky mauve with a soft gold glow and woven stripes."]]},
- {name:"Linen Zari Weaving Work Saree with Blouse Piece", price:40,
+ {name:"Linen Zari Weaving Work Saree with Blouse Piece", comingSoon:true,
   about:"Linen sarees with zari weaving work.",
   tags:["Linen","Zari weaving","Blouse piece included"],
   items:[
    ["NZW2501",[11,62],"Espresso brown checks with a floral zari pallu and gold-striped border."],
    ["NZW2502",[12,63],"Wine maroon with woven florals on the pallu and a gold border."],
    ["NZW2503",[13,64],"Peacock blue checks with large ivory florals and a silver-gold pallu."]]},
- {name:"Gachi Tussar Muga Silk Sarees with Kanjivaram Border", price:35,
+ {name:"Gachi Tussar Muga Silk Sarees with Kanjivaram Border", comingSoon:true,
   about:"Exclusive new gachi tussar muga silk with kanjivaram design border. Gorgeous tussar colour, premium quality and light weight. Beautiful designer blouse piece available.",
   tags:["Gachi tussar muga silk","Kanjivaram border","Designer blouse"],
   items:[
@@ -135,7 +135,7 @@ CATEGORIES.forEach((c, i) => {
     <div class="weave" aria-hidden="true"></div>`;
   c.items.forEach(([code, imgs, desc]) => {
     const price = c.price != null ? c.price : priceOf(code); // collection price overrides the code rule
-    byCode[code] = {code, cat:c.name, n, img:imgs[0], price, desc, tags:c.tags, about:c.about, order:Object.keys(byCode).length};
+    byCode[code] = {code, cat:c.name, n, img:imgs[0], price, desc, tags:c.tags, about:c.about, order:Object.keys(byCode).length, comingSoon:c.comingSoon||false};
     const id = slug(code);
     html += `<article class="item" data-code="${esc(code)}" id="s-${id}">
       <div class="info">
@@ -145,7 +145,7 @@ CATEGORIES.forEach((c, i) => {
         <ul>${c.tags.map(t => isCert(t) ? `<li class="cert">${CERT_IC}${esc(t)}</li>` : `<li>${esc(t)}</li>`).join('')}</ul>
         <div class="actions">
           <button class="heart" data-act="like" aria-pressed="false" aria-label="Save ${esc(code)}">${heartSvg}</button>
-          <button class="add" data-act="add">Add to basket</button>
+          <button class="add" data-act="add"${c.comingSoon ? ' disabled aria-disabled="true"' : ''}>Add to basket</button>
           <span class="inb" hidden></span>
         </div>
       </div>
@@ -153,7 +153,7 @@ CATEGORIES.forEach((c, i) => {
         <div class="frame">
           <img src="${IMG[imgs[0]]}" alt="${esc(code)}: ${esc(desc)}" loading="lazy" data-act="zoom">
           <img class="wm" src="${LOGO}" alt="">
-          <div class="tag"><span>${esc(code)}  - ${price != null ? gbp(price) : 'Price on request'}</span></div>
+          <div class="tag"><span>${esc(code)}  - ${c.comingSoon ? 'Coming soon' : price != null ? gbp(price) : 'Price on request'}</span></div>
         </div>
         ${imgs.length > 1 ? `<div class="views">${imgs.map((k,j)=>`<button data-act="view" data-img="${k}" aria-label="View ${j+1}" aria-current="${j===0}"><img src="${IMG[k]}" alt=""></button>`).join('')}</div>` : ''}
       </figure>
@@ -362,7 +362,7 @@ function searchSarees(q){
 const sCard = b => `<div class="sc" data-code="${esc(b.code)}">
   <div class="pw"><button class="go" data-sact="go" tabindex="-1" aria-hidden="true"><span class="ph"><img src="${IMG[b.img]}" alt="" loading="lazy"></span></button>
   <button class="hh" data-sact="like" aria-pressed="${liked.has(b.code)}" aria-label="Save ${esc(b.code)}">${heartSvg}</button></div>
-  <button class="go" data-sact="go"><span class="cd">${esc(b.code)}</span><span class="ds">${esc(b.desc)}</span><span class="pr">${b.price != null ? gbp(b.price) : 'Price on request'}</span></button>
+  <button class="go" data-sact="go"><span class="cd">${esc(b.code)}</span><span class="ds">${esc(b.desc)}</span><span class="pr">${b.comingSoon ? 'Coming soon' : b.price != null ? gbp(b.price) : 'Price on request'}</span></button>
 </div>`;
 function renderSearch(){
   const q = $('#sinput').value.trim(), grid = $('#sgrid'), none = $('#snone'), title = $('#stitle');
