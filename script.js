@@ -9,20 +9,26 @@ const LOGO = "images/logo.png";
 // Catalogue data taken from the document. Category text is the document's wording (spelling tidied);
 // per-saree descriptions are written from each photo.
 const CATEGORIES = [
- {name:"Pure Gachi Tussar Jamdani Sarees with Blouse Piece",
-  about:"Allover handwoven original tussar jamdani sarees.",
-  tags:["Pure gachi tussar","Handwoven jamdani","Blouse piece included"],
+ {name:"Uppada Soft Silk with Allover Pochampally Ikkat Designs",
+  about:"New Uppada soft silk with allover Pochampally ikkat designs, double kanchi borders, contrast pallu and plain blouse.",
+  tags:["Uppada soft silk","Pochampally ikkat","Double kanchi border","Contrast pallu","Plain blouse"],
   items:[
-   ["GTJS6501",[0,52],"Brick red tussar scattered with ivory jamdani motifs, finished with a figurative woven pallu and tasselled edge."],
-   ["GTJ6502",[1,53],"Olive khaki body with ivory woven figures and a broad geometric pallu in cream and gold."],
-   ["GTJ6503",[2,54],"Soft dove blue with white jamdani buttis and a bold lattice pallu."],
-   ["GTJ6504",[3,55],"Deep plum with ivory buttis and a striking geometric pallu with tassels."],
-   ["GTJ6505",[4],"Coffee brown tussar with ivory leaf-and-vine jamdani flowing over the whole drape."]]},
- {name:"Pure Gachi Tussar Jamdani Sarees with Blouse Piece",
-  about:"Our most requested tussar jamdani. Allover handwoven, super soft, light weight and premium quality.",
-  tags:["Pure gachi tussar","Super soft","Light weight","Blouse piece included"],
+   ["USSP4001",[37,36],"Emerald green ikkat body with a rani pink pallu and a plum border woven in gold zari."],
+   ["USSP4002",[39,38],"Navy blue with olive-gold ikkat florals, a hot pink pallu and a gold temple border."],
+   ["USSP4003",[41,40],"Violet ikkat body with a lime-yellow pallu and a plum border in silver-gold zari."],
+   ["USSP4004",[43,42],"Bottle green ikkat with a bright pink pallu and a plum double kanchi border."],
+   ["USSP4005",[45,44],"Fresh aqua ikkat with a pink-red pallu and a lilac border in silver zari."],
+   ["USSP4006",[47,46],"Dusky lilac-grey ikkat with a rose pink pallu and a violet temple border."],
+   ["USSP4007",[49,48],"Soft pistachio ikkat with a coral-red ikkat pallu and a grey-silver border."],
+   ["USSP4008",[51,50],"Peach and rose-gold ikkat with a deep green pallu and a gold-woven border."]]},
+ {name:"Mangalagiri Silk Kanchi Border with Buta Sarees",
+  about:"Good quality Mangalagiri silk with kanchi border, self BB buta and running blouse.",
+  tags:["Mangalagiri silk","Kanchi border","Self buta","Running blouse"],
   items:[
-   ["TJS7001",[5,56],"Midnight navy with a bronze woven border and a richly patterned pallu."]]},
+   ["MG5404",[32],"Bright orange with a red kanchi border and gold buttas."],
+   ["MG5401",[33],"Royal blue with silver buttas and a silver kanchi border."],
+   ["MG5402",[34],"Turquoise blue with silver buttas and border."],
+   ["MG5405",[35],"Teal blue with gold buttas and a contrast border."]]},
  {name:"Mangalagiri Tissue Kuppadam Sarees",
   about:"Pure half fine zari, allover zari butta, contrast rich pallu and plain blouse.",
   tags:["Half fine zari","Allover zari butta","Contrast pallu","Plain blouse"],
@@ -45,26 +51,25 @@ const CATEGORIES = [
   items:[
    ["AS4002",[30],"Navy checks with a gold tribal-figure border and heavy pallu."],
    ["AS4001",[31],"Deep blue with a silver-grey tribal-figure border and pallu."]]},
- {name:"Uppada Soft Silk with Allover Pochampally Ikkat Designs",
-  about:"New Uppada soft silk with allover Pochampally ikkat designs, double kanchi borders, contrast pallu and plain blouse.",
-  tags:["Uppada soft silk","Pochampally ikkat","Double kanchi border","Contrast pallu","Plain blouse"],
+ {name:"Ikkat Cotton Silk Sequence Saree with Running Blouse Piece",
+  about:"New ikkat cotton silk with sequence work. Super quality and comfortable.",
+  tags:["Cotton silk","Ikkat","Sequence work","Running blouse"],
   items:[
-   ["USSP4001",[37,36],"Emerald green ikkat body with a rani pink pallu and a plum border woven in gold zari."],
-   ["USSP4002",[39,38],"Navy blue with olive-gold ikkat florals, a hot pink pallu and a gold temple border."],
-   ["USSP4003",[41,40],"Violet ikkat body with a lime-yellow pallu and a plum border in silver-gold zari."],
-   ["USSP4004",[43,42],"Bottle green ikkat with a bright pink pallu and a plum double kanchi border."],
-   ["USSP4005",[45,44],"Fresh aqua ikkat with a pink-red pallu and a lilac border in silver zari."],
-   ["USSP4006",[47,46],"Dusky lilac-grey ikkat with a rose pink pallu and a violet temple border."],
-   ["USSP4007",[49,48],"Soft pistachio ikkat with a coral-red ikkat pallu and a grey-silver border."],
-   ["USSP4008",[51,50],"Peach and rose-gold ikkat with a deep green pallu and a gold-woven border."]]},
- {name:"Mangalagiri Silk Kanchi Border with Buta Sarees",
-  about:"Good quality Mangalagiri silk with kanchi border, self BB buta and running blouse.",
-  tags:["Mangalagiri silk","Kanchi border","Self buta","Running blouse"],
+   ["Ikkat Cotton Silk",[21],"White body with a red ikkat border and pallu, dotted with red paisley buttis."]]},
+ {name:"Pure Gachi Tussar Jamdani Sarees with Blouse Piece", comingSoon:true,
+  about:"Allover handwoven original tussar jamdani sarees.",
+  tags:["Pure gachi tussar","Handwoven jamdani","Blouse piece included"],
   items:[
-   ["MG5404",[32],"Bright orange with a red kanchi border and gold buttas."],
-   ["MG5401",[33],"Royal blue with silver buttas and a silver kanchi border."],
-   ["MG5402",[34],"Turquoise blue with silver buttas and border."],
-   ["MG5405",[35],"Teal blue with gold buttas and a contrast border."]]},
+   ["GTJS6501",[0,52],"Brick red tussar scattered with ivory jamdani motifs, finished with a figurative woven pallu and tasselled edge."],
+   ["GTJ6502",[1,53],"Olive khaki body with ivory woven figures and a broad geometric pallu in cream and gold."],
+   ["GTJ6503",[2,54],"Soft dove blue with white jamdani buttis and a bold lattice pallu."],
+   ["GTJ6504",[3,55],"Deep plum with ivory buttis and a striking geometric pallu with tassels."],
+   ["GTJ6505",[4],"Coffee brown tussar with ivory leaf-and-vine jamdani flowing over the whole drape."]]},
+ {name:"Pure Gachi Tussar Jamdani Sarees with Blouse Piece", comingSoon:true,
+  about:"Our most requested tussar jamdani. Allover handwoven, super soft, light weight and premium quality.",
+  tags:["Pure gachi tussar","Super soft","Light weight","Blouse piece included"],
+  items:[
+   ["TJS7001",[5,56],"Midnight navy with a bronze woven border and a richly patterned pallu."]]},
  {name:"Crash Tissue Linen Sarees with Running Blouse Piece", comingSoon:true,
   about:"Tissue by linen with inch border. Premium quality with a super soft fabric.",
   tags:["Tissue by linen","Inch border","Running blouse"],
@@ -90,12 +95,7 @@ const CATEGORIES = [
    ["GMTS2003",[17],"Cream body with a turquoise temple border and matching pallu."],
    ["GMTS2004",[18],"Cream with a red kanjivaram border and striped red pallu."],
    ["GMTS2005",[19],"Cream with a maroon kanjivaram border and striped pallu."],
-   ["GMTS2006",[20],"Cream with a black kanjivaram border for a sharp contrast."]]},
- {name:"Ikkat Cotton Silk Sequence Saree with Running Blouse Piece",
-  about:"New ikkat cotton silk with sequence work. Super quality and comfortable.",
-  tags:["Cotton silk","Ikkat","Sequence work","Running blouse"],
-  items:[
-   ["Ikkat Cotton Silk",[21],"White body with a red ikkat border and pallu, dotted with red paisley buttis."]]}
+   ["GMTS2006",[20],"Cream with a black kanjivaram border for a sharp contrast."]]}
 ];
 
 const liked = new Set();
@@ -108,7 +108,7 @@ function saveState(){
 function loadState(){
   try {
     const s = JSON.parse(localStorage.getItem(STORE_KEY) || '{}');
-    (s.basket || []).forEach(([c,q]) => { if (byCode[c] && Number.isInteger(q) && q > 0) basket.set(c, Math.min(q, 10)); });
+    (s.basket || []).forEach(([c,q]) => { if (byCode[c] && !byCode[c].comingSoon && Number.isInteger(q) && q > 0) basket.set(c, Math.min(q, 10)); });
     (s.liked || []).forEach(c => { if (byCode[c]) liked.add(c); });
   } catch (e) {}
 }
@@ -145,7 +145,7 @@ CATEGORIES.forEach((c, i) => {
         <ul>${c.tags.map(t => isCert(t) ? `<li class="cert">${CERT_IC}${esc(t)}</li>` : `<li>${esc(t)}</li>`).join('')}</ul>
         <div class="actions">
           <button class="heart" data-act="like" aria-pressed="false" aria-label="Save ${esc(code)}">${heartSvg}</button>
-          <button class="add" data-act="add"${c.comingSoon ? ' disabled aria-disabled="true"' : ''}>Add to basket</button>
+          <button class="add" data-act="add"${c.comingSoon ? ' disabled aria-disabled="true"' : ''}>${c.comingSoon ? 'Coming soon' : 'Add to basket'}</button>
           <span class="inb" hidden></span>
         </div>
       </div>
@@ -162,7 +162,7 @@ CATEGORIES.forEach((c, i) => {
   html += `</section>`;
 });
 $('#index').innerHTML = idx;
-$('#trio').innerHTML = [1,14,32].map(k=>`<img src="${IMG[k]}" alt="">`).join('');
+$('#trio').innerHTML = [37,32,26].map(k=>`<img src="${IMG[k]}" alt="">`).join('');
 $('#catalog').innerHTML = html;
 loadState();
 
