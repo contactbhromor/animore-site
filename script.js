@@ -3,7 +3,7 @@
 const API_BASE = 'https://animore-api.vercel.app';
 // =====================
 
-const IMG = Array.from({length:65}, (_, i) => `images/${i}.jpg`);
+const IMG = Array.from({length:67}, (_, i) => `images/${i}.jpg`);
 const LOGO = "images/logo.png";
 
 // Catalogue data taken from the document. Category text is the document's wording (spelling tidied);
@@ -64,7 +64,7 @@ const CATEGORIES = [
    ["GTJ6502",[1,53],"Olive khaki body with ivory woven figures and a broad geometric pallu in cream and gold."],
    ["GTJ6503",[2,54],"Soft dove blue with white jamdani buttis and a bold lattice pallu."],
    ["GTJ6504",[3,55],"Deep plum with ivory buttis and a striking geometric pallu with tassels."],
-   ["GTJ6505",[4],"Coffee brown tussar with ivory leaf-and-vine jamdani flowing over the whole drape."]]},
+   ["GTJ6505",[65,66],"Coffee brown tussar with ivory leaf-and-vine jamdani flowing over the whole drape."]]},
  {name:"Pure Gachi Tussar Jamdani Sarees with Blouse Piece", comingSoon:true,
   about:"Our most requested tussar jamdani. Allover handwoven, super soft, light weight and premium quality.",
   tags:["Pure gachi tussar","Super soft","Light weight","Blouse piece included"],
