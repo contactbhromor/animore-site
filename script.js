@@ -13,9 +13,9 @@ const CATEGORIES = [
   about:"Each saree is meticulously hand-woven using a tapestry weaving technique that takes anywhere from one month to two years to complete a single piece, reflecting exceptional artisanal skill.",
   tags:["Handwoven masterpiece","Mulberry silk","Iridescent glow","Play of colour effect"],
   items:[
-   ["MP6501",[67,68],"Exquisite green silk saree with allover bronze zari buttis and rich gold border. Features distinctive optical quality where the saree appears to change colours as light reflects off it, creating a stunning iridescent glow. Made with 500g mulberry silk thread and 250g zari thread for authentic metallic lustre."],
-   ["MP6502",[69,70],"Mustard yellow saree with allover zari buttis and a magenta border woven in gold temple-style zari."],
-   ["MP6503",[71,72],"Teal green saree with allover gold buttis and a magenta border woven in zari with a temple-style pattern."]]},
+   ["MP6501",[68,67],"Exquisite green silk saree with allover bronze zari buttis and rich gold border. Features distinctive optical quality where the saree appears to change colours as light reflects off it, creating a stunning iridescent glow. Made with 500g mulberry silk thread and 250g zari thread for authentic metallic lustre."],
+   ["MP6502",[70,69],"Mustard yellow saree with allover zari buttis and a magenta border woven in gold temple-style zari."],
+   ["MP6503",[72,71],"Teal green saree with allover gold buttis and a magenta border woven in zari with a temple-style pattern."]]},
  {name:"Uppada Soft Silk with Allover Pochampally Ikkat Designs",
   about:"New Uppada soft silk with allover Pochampally ikkat designs, double kanchi borders, contrast pallu and plain blouse.",
   tags:["Uppada soft silk","Pochampally ikkat","Double kanchi border","Contrast pallu","Plain blouse"],
