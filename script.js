@@ -3,12 +3,17 @@
 const API_BASE = 'https://animore-api.vercel.app';
 // =====================
 
-const IMG = Array.from({length:67}, (_, i) => `images/${i}.jpg`);
+const IMG = Array.from({length:69}, (_, i) => `images/${i}.jpg`);
 const LOGO = "images/logo.png";
 
 // Catalogue data taken from the document. Category text is the document's wording (spelling tidied);
 // per-saree descriptions are written from each photo.
 const CATEGORIES = [
+ {name:"Premium Handwoven Craftsmanship Collection",
+  about:"Each saree is meticulously hand-woven using a tapestry weaving technique that takes anywhere from one month to two years to complete a single piece, reflecting exceptional artisanal skill.",
+  tags:["Handwoven masterpiece","Mulberry silk","Iridescent glow","Play of colour effect"],
+  items:[
+   ["MP6501",[67,68],"Exquisite green silk saree with allover bronze zari buttis and rich gold border. Features distinctive optical quality where the saree appears to change colours as light reflects off it, creating a stunning iridescent glow. Made with 500g mulberry silk thread and 250g zari thread for authentic metallic lustre."]]},
  {name:"Uppada Soft Silk with Allover Pochampally Ikkat Designs",
   about:"New Uppada soft silk with allover Pochampally ikkat designs, double kanchi borders, contrast pallu and plain blouse.",
   tags:["Uppada soft silk","Pochampally ikkat","Double kanchi border","Contrast pallu","Plain blouse"],
