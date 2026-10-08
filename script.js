@@ -9,7 +9,7 @@ const LOGO = "images/logo.png";
 // Catalogue data taken from the document. Category text is the document's wording (spelling tidied);
 // per-saree descriptions are written from each photo.
 const CATEGORIES = [
- {name:"Premium Handwoven Craftsmanship Collection",
+ {name:"Premium Maharani Paithani Saree",
   about:"Each saree is meticulously hand-woven using a tapestry weaving technique that takes anywhere from one month to two years to complete a single piece, reflecting exceptional artisanal skill.",
   tags:["Handwoven masterpiece","Mulberry silk","Iridescent glow","Play of colour effect"],
   items:[
@@ -140,13 +140,15 @@ CATEGORIES.forEach((c, i) => {
     <div class="weave" aria-hidden="true"></div>`;
   c.items.forEach(([code, imgs, desc]) => {
     const price = c.price != null ? c.price : priceOf(code); // collection price overrides the code rule
+    // First sentence is the headline; any further sentences go on their own lines in normal text
+    const [lead, ...more] = desc.split(/(?<=[.!?])\s+(?=[A-Z0-9])/);
     byCode[code] = {code, cat:c.name, n, img:imgs[0], price, desc, tags:c.tags, about:c.about, order:Object.keys(byCode).length, comingSoon:c.comingSoon||false};
     const id = slug(code);
     html += `<article class="item" data-code="${esc(code)}" id="s-${id}">
       <div class="info">
         <p class="cname">${n}. ${esc(c.name)}</p>
         <p class="code">${esc(code)}</p>
-        <h3 class="desc">${esc(desc)}</h3>
+        <h3 class="desc">${esc(lead)}</h3>${more.length ? `<div class="desc-more">${more.map(t => `<p>${esc(t)}</p>`).join('')}</div>` : ''}
         <ul>${c.tags.map(t => isCert(t) ? `<li class="cert">${CERT_IC}${esc(t)}</li>` : `<li>${esc(t)}</li>`).join('')}</ul>
         <div class="actions">
           <button class="heart" data-act="like" aria-pressed="false" aria-label="Save ${esc(code)}">${heartSvg}</button>
@@ -169,6 +171,9 @@ CATEGORIES.forEach((c, i) => {
 $('#index').innerHTML = idx;
 $('#trio').innerHTML = [37,32,26].map(k=>`<img src="${IMG[k]}" alt="">`).join('');
 $('#catalog').innerHTML = html;
+// Heading count follows the number of collections automatically
+{ const words=['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen','twenty'];
+  const el=document.getElementById('colCount'); if (el) el.textContent = words[CATEGORIES.length] || CATEGORIES.length; }
 loadState();
 
 // UI helpers
