@@ -63,7 +63,7 @@ const CATEGORIES = [
   tags:["Cotton silk","Ikkat","Sequence work","Running blouse"],
   items:[
    ["Ikkat Cotton Silk",[21],"White body with a red ikkat border and pallu, dotted with red paisley buttis."]]},
- {name:"Pure Gachi Tussar Jamdani Sarees with Blouse Piece", comingSoon:true,
+ {name:"Pure Gachi Tussar Jamdani Sarees with Blouse Piece",
   about:"Allover handwoven original tussar jamdani sarees.",
   tags:["Pure gachi tussar","Handwoven jamdani","Blouse piece included"],
   items:[
@@ -72,37 +72,37 @@ const CATEGORIES = [
    ["GTJ6503",[2,54],"Soft dove blue with white jamdani buttis and a bold lattice pallu."],
    ["GTJ6504",[3,55],"Deep plum with ivory buttis and a striking geometric pallu with tassels."],
    ["GTJ6505",[65,66],"Coffee brown tussar with ivory leaf-and-vine jamdani flowing over the whole drape."]]},
- {name:"Pure Gachi Tussar Jamdani Sarees with Blouse Piece", comingSoon:true,
+ {name:"Pure Gachi Tussar Jamdani Sarees with Blouse Piece",
   about:"Our most requested tussar jamdani. Allover handwoven, super soft, light weight and premium quality.",
   tags:["Pure gachi tussar","Super soft","Light weight","Blouse piece included"],
   items:[
    ["TJS7001",[5,56],"Midnight navy with a bronze woven border and a richly patterned pallu."]]},
- {name:"Crash Tissue Linen Sarees with Running Blouse Piece", comingSoon:true,
+ {name:"Crash Tissue Linen Sarees with Running Blouse Piece",
   about:"Tissue by linen with inch border. Premium quality with a super soft fabric.",
   tags:["Tissue by linen","Inch border","Running blouse"],
   items:[
-   ["TL1501",[6,57],"Steel blue with a warm gold tissue sheen and fine zari stripes through the pallu."],
-   ["TL1502",[7,58],"Clear aqua with silver tissue stripes; cool and airy."],
-   ["TL1503",[8,59],"Silver grey crash tissue with a striped, checked pallu."],
-   ["TL1504",[9,60],"Peach rose with gold tissue shimmer and a striped pallu."],
-   ["TL1505",[10,61],"Dusky mauve with a soft gold glow and woven stripes."]]},
- {name:"Linen Zari Weaving Work Saree with Blouse Piece", comingSoon:true,
+   ["CTL1501",[6,57],"Steel blue with a warm gold tissue sheen and fine zari stripes through the pallu."],
+   ["CTL1502",[7,58],"Clear aqua with silver tissue stripes; cool and airy."],
+   ["CTL1503",[8,59],"Silver grey crash tissue with a striped, checked pallu."],
+   ["CTL1504",[9,60],"Peach rose with gold tissue shimmer and a striped pallu."],
+   ["CTL1505",[10,61],"Dusky mauve with a soft gold glow and woven stripes."]]},
+ {name:"Linen Zari Weaving Work Saree with Blouse Piece",
   about:"Linen sarees with zari weaving work.",
   tags:["Linen","Zari weaving","Blouse piece included"],
   items:[
    ["NZW2501",[11,62],"Espresso brown checks with a floral zari pallu and gold-striped border."],
    ["NZW2502",[12,63],"Wine maroon with woven florals on the pallu and a gold border."],
    ["NZW2503",[13,64],"Peacock blue checks with large ivory florals and a silver-gold pallu."]]},
- {name:"Gachi Tussar Muga Silk Sarees with Kanjivaram Border", comingSoon:true,
+ {name:"Gachi Tussar Muga Silk Sarees with Kanjivaram Border",
   about:"Exclusive new gachi tussar muga silk with kanjivaram design border. Gorgeous tussar colour, premium quality and light weight. Beautiful designer blouse piece available.",
   tags:["Gachi tussar muga silk","Kanjivaram border","Designer blouse"],
   items:[
-   ["GTMS2001",[14],"Natural beige tussar with a deep red kanjivaram border and a red woven pallu."],
-   ["GTMS2002",[16,15],"Ivory muga with a red temple border, red buttis and a rich red pallu."],
-   ["GMTS2003",[17],"Cream body with a turquoise temple border and matching pallu."],
-   ["GMTS2004",[18],"Cream with a red kanjivaram border and striped red pallu."],
-   ["GMTS2005",[19],"Cream with a maroon kanjivaram border and striped pallu."],
-   ["GMTS2006",[20],"Cream with a black kanjivaram border for a sharp contrast."]]}
+   ["GTMS3001",[14],"Natural beige tussar with a deep red kanjivaram border and a red woven pallu."],
+   ["GTMS3002",[16,15],"Ivory muga with a red temple border, red buttis and a rich red pallu."],
+   ["GTMS3003",[17],"Cream body with a turquoise temple border and matching pallu."],
+   ["GTMS3004",[18],"Cream with a red kanjivaram border and striped red pallu."],
+   ["GTMS3005",[19],"Cream with a maroon kanjivaram border and striped pallu."],
+   ["GTMS3006",[20],"Cream with a black kanjivaram border for a sharp contrast."]]}
 ];
 
 const liked = new Set();
@@ -354,7 +354,7 @@ document.addEventListener('keydown', e => {
 });
 // Search: matches saree codes, collection names, fabric/style tags and the colour words in each description
 const POPULAR = ['Silk Mark certified','Tussar jamdani','Crash tissue linen','Linen zari','Tussar muga silk','Kanjivaram border','Ikkat cotton silk','Mangalagiri','Kuppadam','Tussar kosa','Tribal figure art','Uppada ikkat silk'];
-const RECOMMENDED = ['USSP4001','GTJ6504','TL1501','NZW2503','GTMS2002','MT6004','TK6503','MG5404','USSP4005','AS4001'];
+const RECOMMENDED = ['USSP4001','GTJ6504','CTL1501','NZW2503','GTMS3002','MT6004','TK6503','MG5404','USSP4005','AS4001'];
 const STOP = new Set(['saree','with','and','the','for','of','a','in']);
 const ALIAS = {sari:'saree',saris:'saree',sarees:'saree',tasar:'tussar',tusser:'tussar',tassar:'tussar',ikat:'ikkat',ikkath:'ikkat',kanjeevaram:'kanjivaram',kanchipuram:'kanjivaram',pochampalli:'pochampally',jamdhani:'jamdani',grey:'gray',silkmark:'silk mark',certificate:'certified',certification:'certified',certify:'certified',silkmarked:'silk mark'};
 const norm = t => t.toLowerCase().replace(/gray/g,'grey').replace(/[^a-z0-9\s]/g,' ');
@@ -387,7 +387,7 @@ function renderSearch(){
   grid.innerHTML = res.map(sCard).join('');
   title.textContent = res.length ? `${res.length} saree${res.length > 1 ? 's' : ''} found for \u201c${q}\u201d` : `No sarees found for \u201c${q}\u201d`;
   none.hidden = !!res.length;
-  none.textContent = 'Try a popular choice, a saree code such as TL1501, or a colour such as blue or red.';
+  none.textContent = 'Try a popular choice, a saree code such as CTL1501, or a colour such as blue or red.';
 }
 function openSearch(){
   $('#spanel').hidden = false; $('#sscrim').hidden = false;
